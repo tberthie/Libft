@@ -5,21 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tberthie <tberthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/02 17:57:41 by tberthie          #+#    #+#             */
-/*   Updated: 2016/11/02 21:49:44 by tberthie         ###   ########.fr       */
+/*   Created: 2016/11/07 11:54:34 by tberthie          #+#    #+#             */
+/*   Updated: 2016/11/07 11:55:02 by tberthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void		*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	char		*s1;
-	const char	*s2;
+	size_t	i;
 
-	s1 = dst;
-	s2 = src;
-	while (n-- > 0)
-		*s1++ = *s2++;
-	return (dst);
+	i = 0;
+	while (i != n)
+	{
+		((char*)dest)[i] = ((const char*)src)[i];
+		++i;
+	}
+	return (dest);
 }

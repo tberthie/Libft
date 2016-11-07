@@ -6,7 +6,7 @@
 /*   By: tberthie <tberthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 17:54:57 by tberthie          #+#    #+#             */
-/*   Updated: 2016/11/04 16:49:33 by tberthie         ###   ########.fr       */
+/*   Updated: 2016/11/07 11:43:39 by tberthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char *str;
-
-	str = s;
-	while (n-- > 0)
-		*str++ = 0;
+	while (n--)
+		((char*)s)[n] = 0;
 }
