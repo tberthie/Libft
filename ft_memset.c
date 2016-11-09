@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tberthie <tberthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/02 17:52:27 by tberthie          #+#    #+#             */
-/*   Updated: 2016/11/07 11:42:46 by tberthie         ###   ########.fr       */
+/*   Created: 2016/11/09 12:36:49 by tberthie          #+#    #+#             */
+/*   Updated: 2016/11/09 12:36:59 by tberthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+void		*ft_memset(void *str, int c, size_t n)
 {
-	while (len--)
-		((char*)b)[len] = c;
-	return (b);
+	while (n--)
+		((char*)str)[n] = c;
+	return (str);
 }

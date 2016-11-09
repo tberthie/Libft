@@ -5,24 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tberthie <tberthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/02 20:02:48 by tberthie          #+#    #+#             */
-/*   Updated: 2016/11/04 20:53:31 by tberthie         ###   ########.fr       */
+/*   Created: 2016/11/09 12:38:03 by tberthie          #+#    #+#             */
+/*   Updated: 2016/11/09 12:38:05 by tberthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*ret;
-	char	i;
+	int	i;
 
-	i = c;
-	ret = 0;
-	while (*s)
-		if (*s++ == i)
-			ret = (char*)(s - 1);
-	if (!i)
-		return ((char*)s);
-	return (!ret ? NULL : ret);
+	i = (int)ft_strlen(s) + 1;
+	while (i && s[--i] != c)
+		;
+	return (s[i] == c) ? (char*)s + i : 0;
 }

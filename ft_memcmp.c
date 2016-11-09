@@ -5,27 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tberthie <tberthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/04 14:54:36 by tberthie          #+#    #+#             */
-/*   Updated: 2016/11/07 11:49:40 by tberthie         ###   ########.fr       */
+/*   Created: 2016/11/09 12:36:32 by tberthie          #+#    #+#             */
+/*   Updated: 2016/11/09 12:36:34 by tberthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
-	int				i;
-
-	i = 0;
-	str1 = (unsigned char*)s1;
-	str2 = (unsigned char*)s2;
 	while (n--)
 	{
-		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
-		i++;
+		if (*((unsigned char*)s1++) != *((unsigned char*)s2++))
+			return (*((unsigned char*)s1 - 1) - *((unsigned char*)s2 - 1));
 	}
 	return (0);
 }

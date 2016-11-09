@@ -5,25 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tberthie <tberthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/02 18:33:42 by tberthie          #+#    #+#             */
-/*   Updated: 2016/11/07 11:25:59 by tberthie         ###   ########.fr       */
+/*   Created: 2016/11/09 12:37:27 by tberthie          #+#    #+#             */
+/*   Updated: 2016/11/09 12:37:31 by tberthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strdup(const char *s1)
+char		*ft_strdup(const char *s)
 {
-	char	*cpy;
-	int		i;
+	char			*str;
+	unsigned int	i;
 
-	i = 0;
-	cpy = (char*)malloc(sizeof(char) * (ft_strlen(s1) + 1));
-	if (!cpy)
+	if (!(str = (char*)malloc(sizeof(char) * (ft_strlen(s) + 1))))
 		return (NULL);
-	while (*s1)
-		cpy[i++] = *s1++;
-	cpy[i] = '\0';
-	return (cpy);
+	i = 0;
+	while (*s)
+		str[i++] = *s++;
+	str[i] = '\0';
+	return (str);
 }

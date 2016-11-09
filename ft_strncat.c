@@ -5,22 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tberthie <tberthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/02 18:51:33 by tberthie          #+#    #+#             */
-/*   Updated: 2016/11/07 11:13:52 by tberthie         ###   ########.fr       */
+/*   Created: 2016/11/09 12:37:48 by tberthie          #+#    #+#             */
+/*   Updated: 2016/11/09 12:37:49 by tberthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+char		*ft_strncat(char *dest, const char *src, size_t n)
 {
-	int i;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (s1[i])
-		i++;
-	while (*s2 && n-- > 0)
-		s1[i++] = *s2++;
-	s1[i] = '\0';
-	return (s1);
+	while (dest[i])
+		++i;
+	j = 0;
+	while (*src && j != n)
+		dest[i + j++] = *src++;
+	dest[i + j] = '\0';
+	return (dest);
 }

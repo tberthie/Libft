@@ -5,19 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tberthie <tberthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/02 18:32:20 by tberthie          #+#    #+#             */
-/*   Updated: 2016/11/04 20:52:45 by tberthie         ###   ########.fr       */
+/*   Created: 2016/11/09 12:37:42 by tberthie          #+#    #+#             */
+/*   Updated: 2016/11/09 12:37:44 by tberthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-size_t		ft_strlen(const char *s)
+size_t		ft_strlen(char *str)
 {
-	size_t	len;
+	size_t	i;
 
-	len = 0;
-	while (*s++)
-		len++;
-	return (len);
+	i = 0;
+	while (str[i])
+		++i;
+	return (i);
 }

@@ -5,26 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tberthie <tberthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 10:33:26 by tberthie          #+#    #+#             */
-/*   Updated: 2016/11/07 11:18:52 by tberthie         ###   ########.fr       */
+/*   Created: 2016/11/09 12:42:17 by tberthie          #+#    #+#             */
+/*   Updated: 2016/11/09 13:13:53 by tberthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(const char *str)
+#include "libft.h"
+
+int			ft_atoi(const char *str)
 {
 	int neg;
-	int out;
+	int	nbr;
 
-	out = 0;
-	while (*str && *str > -1 && *str <= 32)
+	nbr = 0;
+	while (ft_isspace(*str))
 		str++;
 	neg = (*str == '-' ? -1 : 1);
-	if (*str && (*str == '+' || *str == '-'))
+	if (*str == '+' || *str == '-')
 		str++;
-	while (*str && *str >= '0' && *str <= '9')
-	{
-		out *= 10;
-		out += *str++ - '0';
-	}
-	return (out * neg);
+	while (*str >= '0' && *str <= '9')
+		nbr = (nbr * 10 + *str++ - '0');
+	return (neg * nbr);
 }

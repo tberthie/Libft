@@ -6,14 +6,14 @@
 /*   By: tberthie <tberthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 17:58:48 by tberthie          #+#    #+#             */
-/*   Updated: 2016/11/03 17:59:19 by tberthie         ###   ########.fr       */
+/*   Updated: 2016/11/09 12:37:06 by tberthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
 void		ft_putstr(char const *s)
 {
-	while (*s)
-		ft_putchar(*s++);
+	write(1, s, ft_strlen(s));
 }

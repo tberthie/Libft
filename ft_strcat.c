@@ -5,20 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tberthie <tberthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/02 18:48:35 by tberthie          #+#    #+#             */
-/*   Updated: 2016/11/07 11:10:24 by tberthie         ###   ########.fr       */
+/*   Created: 2016/11/09 12:37:10 by tberthie          #+#    #+#             */
+/*   Updated: 2016/11/09 12:37:11 by tberthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *s1, const char *s2)
+char				*ft_strcat(char *dest, const char *src)
 {
-	int		i;
+	unsigned int	i;
 
 	i = 0;
-	while (s1[i])
-		i++;
-	while (*s2)
-		s1[i++] = *s2++;
-	s1[i] = '\0';
-	return (s1);
+	while (dest[i])
+		++i;
+	while (*src)
+		dest[i++] = *src++;
+	dest[i] = '\0';
+	return (dest);
 }

@@ -5,18 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tberthie <tberthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/02 18:38:24 by tberthie          #+#    #+#             */
-/*   Updated: 2016/11/07 11:25:44 by tberthie         ###   ########.fr       */
+/*   Created: 2016/11/09 12:37:22 by tberthie          #+#    #+#             */
+/*   Updated: 2016/11/09 12:37:24 by tberthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dst, const char *src)
+char	*ft_strcpy(char *dest, const char *src)
 {
 	int	i;
 
-	i = 0;
-	while (*src)
-		dst[i++] = *src++;
-	dst[i] = '\0';
-	return (dst);
+	i = -1;
+	while (src[++i])
+		dest[i] = src[i];
+	dest[i] = '\0';
+	return (dest);
 }
