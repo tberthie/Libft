@@ -6,14 +6,33 @@
 /*   By: tberthie <tberthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 21:48:08 by tberthie          #+#    #+#             */
-/*   Updated: 2016/11/09 13:25:06 by tberthie         ###   ########.fr       */
+/*   Updated: 2016/12/01 23:10:45 by tberthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <stdlib.h>
+# include <unistd.h>
 # include <string.h>
+# include <stdarg.h>
+# include <wchar.h>
+# define BUFF_SIZE 32
+
+typedef struct	s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}				t_list;
+
+typedef struct	s_slot
+{
+	char			*save;
+	int				fd;
+	struct s_slot	*next;
+}					t_slot;
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
@@ -68,13 +87,6 @@ void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 
-typedef struct	s_list
-{
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
-}				t_list;
-
 t_list			*ft_lstnew(void const *content, size_t content_size);
 void			ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
@@ -87,5 +99,15 @@ int				ft_countwords(const char *s, int c);
 void			ft_puttab(char **tab);
 int				ft_isspace(char c);
 void			ft_lstpush(t_list **alst, t_list *new);
+char			*ft_itoabase(int n, char *b);
+void			ft_putunbr(unsigned int n);
+int				ft_freeret(void *p, int r);
+int				get_next_line(const int fd, char **line);
+
+int				ft_printf(const char *s, ...);
+int				ft_charwlen(wchar_t c);
+int				ft_strwlen(wchar_t *s);
+void			ft_putwchar(wchar_t c);
+void			ft_putwstr(wchar_t *s);
 
 #endif
