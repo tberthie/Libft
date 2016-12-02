@@ -72,7 +72,7 @@ PRINTF = ft_printf.c \
 		 ft_utl.c \
 		 ft_color.c
 
-OBJ = $(addprefix libft/, $(LIB:.c=.o))
+OBJ = $(addprefix srcs/, $(LIB:.c=.o))
 PF_OBJ = $(addprefix printf/, $(PRINTF:.c=.o))
 
 NAME = libft.a
@@ -85,7 +85,7 @@ all: $(NAME)
 $(NAME): $(OBJ) $(PF_OBJ)
 	@ar -rsc $(NAME) $(OBJ) $(PF_OBJ)
 
-libft/%.o: libft/%.c
+srcs/%.o: srcs/%.c
 	@$(CC) $(FLAGS) -I $(INCS) -o $@ -c $<
 
 printf/%.o: printf/%.c
