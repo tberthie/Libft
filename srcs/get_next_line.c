@@ -6,11 +6,10 @@
 /*   By: tberthie <tberthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 16:42:16 by tberthie          #+#    #+#             */
-/*   Updated: 2016/12/01 23:22:43 by tberthie         ###   ########.fr       */
+/*   Updated: 2016/12/03 16:11:36 by tberthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
 #include "libft.h"
 
 static t_slot	*get_slot(t_slot *first, int fd)
