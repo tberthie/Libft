@@ -1,16 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   ft_gnl.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tberthie <tberthie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/21 16:42:16 by tberthie          #+#    #+#             */
-/*   Updated: 2016/12/01 23:22:43 by tberthie         ###   ########.fr       */
+/*   Created: 2016/12/03 16:34:48 by tberthie          #+#    #+#             */
+/*   Updated: 2016/12/03 16:34:58 by tberthie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
 #include "libft.h"
 
 static t_slot	*get_slot(t_slot *first, int fd)
@@ -64,7 +63,7 @@ static int		process_slot(t_slot *slot, char **line)
 	return (*new ? 1 : 0);
 }
 
-int				get_next_line(const int fd, char **line)
+int				ft_gnl(const int fd, char **line)
 {
 	static t_slot	*first;
 	t_slot			*slot;

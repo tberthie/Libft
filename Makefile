@@ -62,7 +62,7 @@ LIB = ft_atoi.c \
 	  ft_lstpush.c \
 	  ft_freeret.c \
 	  ft_wchar.c \
-	  get_next_line.c \
+	  ft_gnl.c \
 
 PRINTF = ft_printf.c \
 		 ft_format.c \
