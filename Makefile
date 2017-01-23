@@ -63,6 +63,9 @@ LIB = ft_atoi.c \
 	  ft_freeret.c \
 	  ft_wchar.c \
 	  ft_gnl.c \
+	  ft_tablen.c \
+	  ft_errret.c \
+	  ft_malloc.c
 
 PRINTF = ft_printf.c \
 		 ft_format.c \
@@ -83,18 +86,18 @@ INCS = includes
 all: $(NAME)
 
 $(NAME): $(OBJ) $(PF_OBJ)
-	@ar -rsc $(NAME) $(OBJ) $(PF_OBJ)
+	ar -rsc $(NAME) $(OBJ) $(PF_OBJ)
 
 srcs/%.o: srcs/%.c
-	@$(CC) $(FLAGS) -I $(INCS) -o $@ -c $<
+	$(CC) $(FLAGS) -I $(INCS) -o $@ -c $<
 
 printf/%.o: printf/%.c
-	@$(CC) $(FLAGS) -I $(INCS) -o $@ -c $<
+	$(CC) $(FLAGS) -I $(INCS) -o $@ -c $<
 
 clean:
-	@rm -f $(OBJ) $(PF_OBJ)
+	rm -f $(OBJ) $(PF_OBJ)
 
 fclean: clean
-	@rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
